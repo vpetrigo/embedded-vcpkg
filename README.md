@@ -46,7 +46,7 @@ $ git submodule update --init --recursive
 - copy `vcpkg-configuration.json` into the `vcpkg` directory
 
 ```bash
-$ cp vcpkg-configuration.json
+$ cp vcpkg-configuration.json vcpkg
 ```
 
 - activate environment:
