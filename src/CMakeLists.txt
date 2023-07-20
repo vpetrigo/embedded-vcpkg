@@ -3,5 +3,4 @@ add_executable(app startup.s)
 target_link_options(app PRIVATE -Wl,--gc-sections -Wl,-T ${CMAKE_CURRENT_LIST_DIR}/memory.ld -Wl,-Map=${CMAKE_CURRENT_BINARY_DIR}/app.map)
 target_link_options(app PRIVATE "LINKER:--no-warn-rwx-segments")
 target_link_libraries(app PRIVATE smf::smf)
-
 firmware_size(app berkley)

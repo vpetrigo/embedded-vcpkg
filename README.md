@@ -69,12 +69,12 @@ After you `activate` VCPKG environment:
 
 - Linux/MacOS:
 ```bash
-cmake -G Ninja -B cmake-build-debug -S . -DCMAKE_TOOLCHAIN_FILE=vcpkg/scripts/buildsystems/vcpkg.cmake -DVCPKG_CHAINLOAD_TOOLCHAIN_FILE=$(readlink -f cmake/arm-gcc-toolchain.cmake)
+cmake -G Ninja -B cmake-build-debug -S . -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=vcpkg/scripts/buildsystems/vcpkg.cmake -DVCPKG_CHAINLOAD_TOOLCHAIN_FILE=$(readlink -f cmake/arm-gcc-toolchain.cmake)
 cmake --build cmake-build-debug
 ```
 
-- Windows (Powershell/CMD): unfortunatelly VCPKG artifacts environment currently does not work as expected with the Windows
+- Windows (Powershell/CMD):
 ```powershell
-cmake -G Ninja -B cmake-build-debug -S . -DCMAKE_TOOLCHAIN_FILE="cmake\arm-gcc-toolchain.cmake"
+cmake -G Ninja -B cmake-build-debug -S . -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=".\vcpkg\scripts\buildsystems\vcpkg.cmake" -DVCPKG_CHAINLOAD_TOOLCHAIN_FILE="$(dir .\cmake\arm-gcc-toolchain.cmake)"
 cmake --build cmake-build-debug
 ```
