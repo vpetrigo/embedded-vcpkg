@@ -8,9 +8,13 @@
     ```
     . <(curl https://aka.ms/vcpkg-init.sh -L)
     ```
-    - Windows:
+    - Windows (Powershell):
     ```
     iex (iwr -useb https://aka.ms/vcpkg-init.ps1)
+    ```
+    - Windows (CMD):
+    ```
+    curl -LO https://aka.ms/vcpkg-init.cmd && .\vcpkg-init.cmd
     ```
 
 - activate `vcpkg-init`:
@@ -19,9 +23,13 @@
     ```
     . ~/.vcpkg/vcpkg-init.sh
     ```
-    - Windows:
+    - Windows (Powershell):
     ```
     . ~/.vcpkg/vcpkg-init.ps1
+    ```
+    - Windows (CMD)
+    ```
+    %USERPROFILE%\.vcpkg\vcpkg-init.cmd
     ```
 
 - to automatically execute those scripts while starting Bash/Powershell:
@@ -57,9 +65,16 @@ vcpkg install --overlay-triplets=./triplet --triplet=arm-none-eabi --vcpkg-root=
 
 ## Use VCPKG with CMake
 
-:WIP:
+After you `activate` VCPKG environment:
 
+- Linux/MacOS:
 ```bash
 cmake -G Ninja -B cmake-build-debug -S . -DCMAKE_TOOLCHAIN_FILE=vcpkg/scripts/buildsystems/vcpkg.cmake -DVCPKG_CHAINLOAD_TOOLCHAIN_FILE=$(readlink -f cmake/arm-gcc-toolchain.cmake)
+cmake --build cmake-build-debug
+```
+
+- Windows (Powershell/CMD): unfortunatelly VCPKG artifacts environment currently does not work as expected with the Windows
+```powershell
+cmake -G Ninja -B cmake-build-debug -S . -DCMAKE_TOOLCHAIN_FILE="cmake\arm-gcc-toolchain.cmake"
 cmake --build cmake-build-debug
 ```
