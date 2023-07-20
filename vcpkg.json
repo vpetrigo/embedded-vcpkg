@@ -1,0 +1,9 @@
+{
+    "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+    "builtin-baseline": "f6a5d4e8eb7476b8d7fc12a56dff300c1c986131",
+    "name": "my-application",
+    "version": "0.1.0",
+    "dependencies": [
+        "smf"
+    ]
+}

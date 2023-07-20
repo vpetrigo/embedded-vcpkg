@@ -1,0 +1,9 @@
+# CMake
+/cmake-build-*/
+/*build*/
+# IDEA
+/.idea/
+# VS Code
+/.vscode/
+# vcpkg
+/vcpkg_installed/
