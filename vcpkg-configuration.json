@@ -3,12 +3,12 @@
     {
       "kind": "artifact",
       "name": "toolchain",
-      "location": "/home/vpetrigo/projects/c-cpp/registry"
+      "location": "https://github.com/vpetrigo/embedded-vcpkg-registry/archive/refs/heads/main.zip"
     }
   ],
   "requires": {
     "toolchain:tools/ninja-build/ninja": "* 1.11.1",
-    "toolchain:tools/kitware/cmake": "* 3.25.2",
+    "toolchain:tools/kitware/cmake": "* 3.27.0",
     "toolchain:compilers/arm/gcc": "* 12.2.1-1.2"
   },
   "overlay-triplets": [
